@@ -16,6 +16,17 @@ class GameOfLife {
   getBoard() {
     return this.board;
   }
+
+  // HISTORIA 2: Métodos para manipular células individuales
+  setCell(fila, columna, valor) {
+    // Implementación más simple: solo establece el valor
+    this.board[fila][columna] = valor;
+  }
+
+  getCell(fila, columna) {
+    // Implementación más simple: solo devuelve el valor
+    return this.board[fila][columna];
+  }
 }
 
 export default GameOfLife;

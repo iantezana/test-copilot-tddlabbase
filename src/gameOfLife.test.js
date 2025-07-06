@@ -33,3 +33,18 @@ describe("Historia 1: Crear un tablero básico", () => {
     expect(board.every(row => row.every(cell => cell === 0))).toBe(true); // Todas muertas
   });
 });
+
+// 🔴 HISTORIA 2: Manipular células individuales
+// Primera prueba: Poder activar una célula
+describe("Historia 2: Manipular células individuales", () => {
+  it("debería poder activar una célula", () => {
+    // Arrange (Preparar)
+    const game = new GameOfLife(3, 3);
+    
+    // Act (Actuar)
+    game.setCell(1, 1, 1);  // Activar célula en posición (1,1)
+    
+    // Assert (Verificar)
+    expect(game.getCell(1, 1)).toBe(1);  // Debe estar viva (1)
+  });
+});
