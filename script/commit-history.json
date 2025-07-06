@@ -1,0 +1,21 @@
+[
+  {
+    "sha": "HEAD",
+    "author": "iantezana",
+    "commit": {
+      "date": "2025-07-06T16:26:03.000Z",
+      "message": "crea y muestra un tablero inicial",
+      "url": "https://github.com/iantezana/test-copilot-tddlabbase/commit/HEAD"
+    },
+    "stats": {
+      "total": 430,
+      "additions": 419,
+      "deletions": 11,
+      "date": "2025-07-06"
+    },
+    "coverage": 100,
+    "test_count": 3,
+    "failed_tests": 0,
+    "conclusion": "success"
+  }
+]
