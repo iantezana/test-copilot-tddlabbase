@@ -36,6 +36,29 @@ class GameOfLife {
     // Si están fuera del tablero, retornar 0 (célula muerta)
     return 0;
   }
+
+  // HISTORIA 3: Contar vecinos
+  countNeighbors(fila, columna) {
+    let count = 0;
+    
+    // Revisar las 8 posiciones vecinas (3x3 alrededor de la célula)
+    for (let deltaFila = -1; deltaFila <= 1; deltaFila++) {
+      for (let deltaColumna = -1; deltaColumna <= 1; deltaColumna++) {
+        // Saltar la célula central (la propia célula)
+        if (deltaFila === 0 && deltaColumna === 0) continue;
+        
+        const vecinoFila = fila + deltaFila;
+        const vecinoColumna = columna + deltaColumna;
+        
+        // Si el vecino está vivo, incrementar contador
+        if (this.getCell(vecinoFila, vecinoColumna) === 1) {
+          count++;
+        }
+      }
+    }
+    
+    return count;
+  }
 }
 
 export default GameOfLife;

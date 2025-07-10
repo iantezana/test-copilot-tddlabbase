@@ -76,3 +76,19 @@ describe("Historia 2: Manipular células individuales", () => {
     expect(game.getCell(1, 1)).toBe(0);  // Debe estar muerta (0)
   });
 });
+
+// 🔴 HISTORIA 3: Contar vecinos
+// Primera prueba: Contar 0 vecinos para una célula sola
+describe("Historia 3: Contar vecinos", () => {
+  it("debería contar 0 vecinos para una célula sola", () => {
+    // Arrange (Preparar)
+    const game = new GameOfLife(3, 3);
+    game.setCell(1, 1, 1);  // Solo una célula viva en el centro
+    
+    // Act (Actuar)
+    const vecinos = game.countNeighbors(1, 1);
+    
+    // Assert (Verificar)
+    expect(vecinos).toBe(0);  // No tiene vecinos vivos
+  });
+});
