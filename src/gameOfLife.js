@@ -37,22 +37,30 @@ class GameOfLife {
     return 0;
   }
 
-  // HISTORIA 3: Contar vecinos (refactorizado con Clean Code)
+  // HISTORIA 3: Contar vecinos (un solo nivel de indentación)
   countNeighbors(fila, columna) {
     let vecinosVivos = 0;
     
     for (let deltaFila = -1; deltaFila <= 1; deltaFila++) {
-      for (let deltaColumna = -1; deltaColumna <= 1; deltaColumna++) {
-        if (this.esCelulaCentral(deltaFila, deltaColumna)) continue;
-        
-        vecinosVivos += this.obtenerEstadoVecino(fila, deltaFila, columna, deltaColumna);
-      }
+      vecinosVivos += this.contarVecinosEnFila(fila, columna, deltaFila);
     }
     
     return vecinosVivos;
   }
 
   // Métodos privados para mayor claridad
+  contarVecinosEnFila(fila, columna, deltaFila) {
+    let vecinosEnFila = 0;
+    
+    for (let deltaColumna = -1; deltaColumna <= 1; deltaColumna++) {
+      if (this.esCelulaCentral(deltaFila, deltaColumna)) continue;
+      
+      vecinosEnFila += this.obtenerEstadoVecino(fila, deltaFila, columna, deltaColumna);
+    }
+    
+    return vecinosEnFila;
+  }
+
   esCelulaCentral(deltaFila, deltaColumna) {
     return deltaFila === 0 && deltaColumna === 0;
   }
