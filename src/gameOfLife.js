@@ -19,13 +19,22 @@ class GameOfLife {
 
   // HISTORIA 2: Métodos para manipular células individuales
   setCell(fila, columna, valor) {
-    // Implementación más simple: solo establece el valor
-    this.board[fila][columna] = valor;
+    // Validar que las coordenadas estén dentro del tablero
+    if (fila >= 0 && fila < this.board.length && 
+        columna >= 0 && columna < this.board[0].length) {
+      this.board[fila][columna] = valor;
+    }
+    // Si están fuera del tablero, no hacer nada (no lanzar error)
   }
 
   getCell(fila, columna) {
-    // Implementación más simple: solo devuelve el valor
-    return this.board[fila][columna];
+    // Validar que las coordenadas estén dentro del tablero
+    if (fila >= 0 && fila < this.board.length && 
+        columna >= 0 && columna < this.board[0].length) {
+      return this.board[fila][columna];
+    }
+    // Si están fuera del tablero, retornar 0 (célula muerta)
+    return 0;
   }
 }
 

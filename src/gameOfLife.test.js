@@ -47,4 +47,32 @@ describe("Historia 2: Manipular células individuales", () => {
     // Assert (Verificar)
     expect(game.getCell(1, 1)).toBe(1);  // Debe estar viva (1)
   });
+
+  it("debería manejar coordenadas fuera del tablero", () => {
+    // Arrange (Preparar)
+    const game = new GameOfLife(3, 3);  // Tablero 3x3 (coordenadas válidas: 0-2)
+    
+    // Act & Assert (Actuar y Verificar)
+    // Coordenadas fuera del tablero no deben causar error
+    expect(() => game.setCell(5, 5, 1)).not.toThrow();
+    expect(() => game.setCell(-1, 0, 1)).not.toThrow();
+    expect(() => game.setCell(0, -1, 1)).not.toThrow();
+    
+    // getCell fuera del tablero debería retornar 0 (célula muerta)
+    expect(game.getCell(5, 5)).toBe(0);
+    expect(game.getCell(-1, 0)).toBe(0);
+    expect(game.getCell(0, -1)).toBe(0);
+  });
+
+  it("debería poder desactivar una célula", () => {
+    // Arrange (Preparar)
+    const game = new GameOfLife(3, 3);
+    game.setCell(1, 1, 1);  // Primero activamos una célula
+    
+    // Act (Actuar)
+    game.setCell(1, 1, 0);  // Luego la desactivamos
+    
+    // Assert (Verificar)
+    expect(game.getCell(1, 1)).toBe(0);  // Debe estar muerta (0)
+  });
 });

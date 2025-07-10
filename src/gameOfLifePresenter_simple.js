@@ -45,31 +45,13 @@ class GameOfLifePresenter {
       for (let columna = 0; columna < board[fila].length; columna++) {
         const valor = board[fila][columna];
         const clase = valor === 1 ? "viva" : "muerta";
-        // Hacer las células clicables para Historia 2
-        html += `<td class="celula ${clase}" onclick="gamePresenter.toggleCell(${fila}, ${columna})">${valor}</td>`;
+        html += `<td class="celula ${clase}">${valor}</td>`;
       }
       html += "</tr>";
     }
     
     html += "</table>";
     this.boardElement.innerHTML = html;
-  }
-
-  // HISTORIA 2: Método para alternar células al hacer clic
-  toggleCell(fila, columna) {
-    if (!this.game) return;
-    
-    // Obtener el valor actual de la célula
-    const valorActual = this.game.getCell(fila, columna);
-    
-    // Alternar entre 0 (muerta) y 1 (viva)
-    const nuevoValor = valorActual === 1 ? 0 : 1;
-    
-    // Establecer el nuevo valor
-    this.game.setCell(fila, columna, nuevoValor);
-    
-    // Actualizar la visualización
-    this.showBoard();
   }
 }
 
