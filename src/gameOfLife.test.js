@@ -91,4 +91,17 @@ describe("Historia 3: Contar vecinos", () => {
     // Assert (Verificar)
     expect(vecinos).toBe(0);  // No tiene vecinos vivos
   });
+
+  it("debería contar 1 vecino correctamente", () => {
+    // Arrange (Preparar)
+    const game = new GameOfLife(3, 3);
+    game.setCell(0, 0, 1);  // Célula viva en esquina superior izquierda
+    game.setCell(0, 1, 1);  // Su vecino de la derecha
+    
+    // Act (Actuar)
+    const vecinos = game.countNeighbors(0, 0);
+    
+    // Assert (Verificar)
+    expect(vecinos).toBe(1);  // Debe contar 1 vecino vivo
+  });
 });
