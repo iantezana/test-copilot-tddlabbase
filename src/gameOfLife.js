@@ -37,16 +37,22 @@ class GameOfLife {
     return 0;
   }
 
-  // HISTORIA 3: Contar vecinos (implementación súper simple)
+  // HISTORIA 3: Contar vecinos (ahora sí necesitamos generalizar)
   countNeighbors(fila, columna) {
-    // Solo implementar lo mínimo para que pasen las 2 pruebas actuales
-    // Primera prueba: célula sola (1,1) -> 0 vecinos
-    // Segunda prueba: célula (0,0) con vecino en (0,1) -> 1 vecino
+    let count = 0;
     
-    if (fila === 1 && columna === 1) return 0;  // Primera prueba
-    if (fila === 0 && columna === 0) return 1;  // Segunda prueba
+    // Revisar las 8 posiciones vecinas
+    for (let df = -1; df <= 1; df++) {
+      for (let dc = -1; dc <= 1; dc++) {
+        // Saltar la célula central
+        if (df === 0 && dc === 0) continue;
+        
+        // Contar vecino vivo
+        count += this.getCell(fila + df, columna + dc);
+      }
+    }
     
-    return 0;  // Por defecto
+    return count;
   }
 }
 

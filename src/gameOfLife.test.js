@@ -104,4 +104,19 @@ describe("Historia 3: Contar vecinos", () => {
     // Assert (Verificar)
     expect(vecinos).toBe(1);  // Debe contar 1 vecino vivo
   });
+
+  it("debería contar múltiples vecinos correctamente", () => {
+    // Arrange (Preparar)
+    const game = new GameOfLife(3, 3);
+    game.setCell(1, 1, 1);  // Célula central
+    game.setCell(0, 0, 1);  // Vecino diagonal
+    game.setCell(0, 1, 1);  // Vecino arriba
+    game.setCell(1, 0, 1);  // Vecino izquierda
+    
+    // Act (Actuar)
+    const vecinos = game.countNeighbors(1, 1);
+    
+    // Assert (Verificar)
+    expect(vecinos).toBe(3);  // Debe contar 3 vecinos vivos
+  });
 });
