@@ -37,22 +37,30 @@ class GameOfLife {
     return 0;
   }
 
-  // HISTORIA 3: Contar vecinos (ahora sí necesitamos generalizar)
+  // HISTORIA 3: Contar vecinos (refactorizado con Clean Code)
   countNeighbors(fila, columna) {
-    let count = 0;
+    let vecinosVivos = 0;
     
-    // Revisar las 8 posiciones vecinas
-    for (let df = -1; df <= 1; df++) {
-      for (let dc = -1; dc <= 1; dc++) {
-        // Saltar la célula central
-        if (df === 0 && dc === 0) continue;
+    for (let deltaFila = -1; deltaFila <= 1; deltaFila++) {
+      for (let deltaColumna = -1; deltaColumna <= 1; deltaColumna++) {
+        if (this.esCelulaCentral(deltaFila, deltaColumna)) continue;
         
-        // Contar vecino vivo
-        count += this.getCell(fila + df, columna + dc);
+        vecinosVivos += this.obtenerEstadoVecino(fila, deltaFila, columna, deltaColumna);
       }
     }
     
-    return count;
+    return vecinosVivos;
+  }
+
+  // Métodos privados para mayor claridad
+  esCelulaCentral(deltaFila, deltaColumna) {
+    return deltaFila === 0 && deltaColumna === 0;
+  }
+
+  obtenerEstadoVecino(fila, deltaFila, columna, deltaColumna) {
+    const filaVecino = fila + deltaFila;
+    const columnaVecino = columna + deltaColumna;
+    return this.getCell(filaVecino, columnaVecino);
   }
 }
 

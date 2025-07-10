@@ -95,17 +95,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "77ea9165c06ebdcb4ea950cef2b5fdab43694c69",
     "author": "iantezana",
     "commit": {
       "date": "2025-07-10T16:41:19.000Z",
       "message": "proximo ciclo tdd",
-      "url": "https://github.com/iantezana/test-copilot-tddlabbase/commit/HEAD"
+      "url": "https://github.com/iantezana/test-copilot-tddlabbase/commit/77ea9165c06ebdcb4ea950cef2b5fdab43694c69"
     },
     "stats": {
       "total": 35,
       "additions": 28,
       "deletions": 7,
+      "date": "2025-07-10"
+    },
+    "coverage": 100,
+    "test_count": 9,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "iantezana",
+    "commit": {
+      "date": "2025-07-10T16:43:21.000Z",
+      "message": "refactor 1",
+      "url": "https://github.com/iantezana/test-copilot-tddlabbase/commit/HEAD"
+    },
+    "stats": {
+      "total": 28,
+      "additions": 18,
+      "deletions": 10,
       "date": "2025-07-10"
     },
     "coverage": 100,
