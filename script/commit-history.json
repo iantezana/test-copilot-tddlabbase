@@ -133,12 +133,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "81f41b5e0cf50d2ebeb3461d88874d5a699499f9",
     "author": "iantezana",
     "commit": {
       "date": "2025-07-10T16:44:53.000Z",
       "message": "refactoring 2",
-      "url": "https://github.com/iantezana/test-copilot-tddlabbase/commit/HEAD"
+      "url": "https://github.com/iantezana/test-copilot-tddlabbase/commit/81f41b5e0cf50d2ebeb3461d88874d5a699499f9"
     },
     "stats": {
       "total": 20,
@@ -148,6 +148,25 @@
     },
     "coverage": 100,
     "test_count": 9,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "iantezana",
+    "commit": {
+      "date": "2025-07-24T14:03:40.000Z",
+      "message": "historias 4",
+      "url": "https://github.com/iantezana/test-copilot-tddlabbase/commit/HEAD"
+    },
+    "stats": {
+      "total": 26,
+      "additions": 26,
+      "deletions": 0,
+      "date": "2025-07-24"
+    },
+    "coverage": 100,
+    "test_count": 10,
     "failed_tests": 0,
     "conclusion": "success"
   }

@@ -120,3 +120,20 @@ describe("Historia 3: Contar vecinos", () => {
     expect(vecinos).toBe(3);  // Debe contar 3 vecinos vivos
   });
 });
+
+// 🔴 HISTORIA 4: Reglas de supervivencia
+// Primera prueba: Célula viva con menos de 2 vecinos muere (subpoblación)
+describe("Historia 4: Reglas de supervivencia", () => {
+  it("una célula viva con menos de 2 vecinos muere por subpoblación", () => {
+    // Arrange (Preparar)
+    const game = new GameOfLife(3, 3);
+    game.setCell(1, 1, 1);  // Célula viva en el centro
+    game.setCell(0, 0, 1);  // Solo 1 vecino (menos de 2)
+    
+    // Act (Actuar)
+    game.nextGeneration();  // Aplicar reglas del Game of Life
+    
+    // Assert (Verificar)
+    expect(game.getCell(1, 1)).toBe(0);  // Debe morir (subpoblación)
+  });
+});
